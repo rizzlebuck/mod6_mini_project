@@ -41,8 +41,6 @@ class Product(db.Model):
     name = db.Column(db.String(255), nullable=False)
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, default=0, nullable=False)
-    orders = db.relationship('Order', secondary=order_product, backref=db.backref('products'))
-
 
 class CustomerAccount(db.Model):
     __tablename__ = 'Customer_Accounts'
